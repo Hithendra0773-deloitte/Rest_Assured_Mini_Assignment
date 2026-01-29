@@ -3,7 +3,6 @@ import time
 
 BASE_URL = "https://reqres.in/api"
 
-# Headers with User-Agent to bypass Cloudflare
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 }
@@ -46,8 +45,8 @@ def test_get_users():
 
 def test_create_user():
     payload = {
-        "name": "Hithendra",
-        "job": "SDET 2"
+        "name": "Hithendra Sai",
+        "job": "SDET "
     }
     response = create_user(payload)
     print(f"POST /users Response Status: {response.status_code}")
@@ -64,7 +63,7 @@ def test_create_user():
 
 def test_update_user():
     payload = {
-        "name": "Hithendra",
+        "name": "Hithendra Sai Kumar",
         "job": "SDET 2"
     }
 
@@ -77,7 +76,7 @@ def test_update_user():
         assert "updatedAt" in body
         print(" test_update_user passed")
     else:
-        print(f"⚠ test_update_user: API returned {response.status_code} (expected 200)")
+        print(f" test_update_user: API returned {response.status_code} (expected 200)")
 
 
 def test_delete_user():
