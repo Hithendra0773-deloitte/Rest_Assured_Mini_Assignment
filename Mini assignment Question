@@ -1,0 +1,51 @@
+Automate API testing for a public REST API using Python
+
+API Under Test
+Use the public API:
+Base URL: https://reqres.in/api
+
+Tasks
+Task 1: GET User List
+Endpoint: GET /users?page=2
+Validate:
+Status code is 200
+Response time is less than 2 seconds
+Page number is 2
+The response contains at least one user
+Each user has id, email, first_name, last_name
+
+
+
+Task 2: CREATE User
+Endpoint: POST /users
+
+Request body:
+{
+  "name": "Hithendra",
+  "job": "SDET"
+}
+
+Validate:
+Status code is 201
+Response contains name, job, and id
+Name and job match the request
+
+Task 3: UPDATE User
+Endpoint: PUT /users/2
+
+Request body:
+{
+  "name": "Hithendra",
+  "job": "SDET 2"
+}
+
+Validate:
+Status code is 200
+Job title is updated
+Response contains updatedAt
+
+Task 4: DELETE User
+Endpoint: DELETE /users/2
+
+Validate:
+Status code is 204
